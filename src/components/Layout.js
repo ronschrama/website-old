@@ -35,7 +35,7 @@ const StyledLi = styled.li`
 `
 
 const StyledLink = styled(Link)`
-color: #1ca086;
+color: #13BBAF;
 &:hover {
     text-decoration: underline;
   }

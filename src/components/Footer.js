@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import { Twitter, GitHub, LinkedIn } from './Social'
 
 const StyledFooter = styled.footer`
-  border-top: 1px solid #1ca086;
+  border-top: 1px solid #13BBAF;
   margin-top: 3rem;
 `
 
@@ -13,6 +12,10 @@ const StyledBottomBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: -8px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export default function Footer() {
@@ -23,7 +26,7 @@ export default function Footer() {
         <p>Mail me at: hello@ronschrama.com <br /> Or you can find me here:</p>
       </div>
       <StyledBottomBox>
-        <div>
+        <div style={{ marginBottom: '16px' }}>
           <Twitter />
           <GitHub />
           <LinkedIn />

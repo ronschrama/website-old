@@ -1,25 +1,68 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
+
+import Footer from './Footer'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  max-width: 680px;
+  padding: 0 1rem;
+`
+
+const StyledHeader = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+`
+
+const StyledH3 = styled.h3`
+  display: inline;
+  text-decoration: none;
+`
+
+const StyledUl = styled.ul`
+  list-style: none;
+  float: right;
+`
+
+const StyledLi = styled.li`
+  display: inline-block;
+  margin-left: 1.5rem;
+`
+
+const StyledLink = styled(Link)`
+color: #1ca086;
+&:hover {
+    text-decoration: underline;
+  }
+`
+
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
+  <StyledLi>
+    <StyledLink to={props.to}>{props.children}</StyledLink>
+  </StyledLi>
 )
+
 
 export default function layout({ children }) {
   return (
-    <div style={{ margin: `3rem auto`, maxWidth: 680, padding: `0 1rem` }}>
-      <header style={{ marginBottom: `1.5rem` }}>
+    <Container>
+      <StyledHeader>
         <Link to="/">
-          <h3 style={{ display: `inline` }}>Ron Schrama</h3>
+          <StyledH3>Ron Schrama</StyledH3>
         </Link>
-        <ul style={{ listSTyle: `none`, float: `right` }}>
+        <StyledUl>
           <ListLink to="/">Home</ListLink>
           <ListLink to="/about">About</ListLink>
-        </ul>
-      </header>
+        </StyledUl>
+      </StyledHeader>
       {children}
-    </div>
+      <Footer />
+    </Container>
   )
 }

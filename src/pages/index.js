@@ -1,20 +1,23 @@
-import React from "react"
-import { graphql } from 'gatsby'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 
 
 export default function Home({ data }) {
+  const { edges: posts } = data.allMdx
   console.log(data)
   return (
     <Layout>
       <Hero />
       <h4>Recent posts</h4>
-      {data.allMdx.edges.map(({ node }) => (
-        <div key={node.id}>
-          <h3>{node.frontmatter.title}{" "} - {node.frontmatter.date}</h3>
-          <p>{node.excerpt}</p>
+      {posts.map(({ node: post }) => (
+        <div key={post.id}>
+          <Link to={post.fields.slug}>
+            <h3>{post.frontmatter.title}{" "} - {post.frontmatter.date}</h3>
+          </Link>
+          <p>{post.excerpt}</p>
         </div>
       ))}
     </Layout>
@@ -23,8 +26,10 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMdx(
+      limit: 3
+      sort: { fields: [frontmatter___date], order: DESC }
+      ) {
       edges {
         node {
           id
@@ -33,6 +38,9 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
           }
           excerpt
+          fields {
+            slug
+          }
         }
       }
     }

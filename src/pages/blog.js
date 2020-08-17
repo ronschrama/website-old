@@ -2,15 +2,14 @@ import React from "react"
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Hero from '../components/Hero'
 
 
 export default function Home({ data }) {
   console.log(data)
   return (
     <Layout>
-      <Hero />
-      <h4>Recent posts</h4>
+      <h1>Blog</h1>
+      <h4>{data.allMdx.totalCount} Posts</h4>
       {data.allMdx.edges.map(({ node }) => (
         <div key={node.id}>
           <h3>{node.frontmatter.title}{" "} - {node.frontmatter.date}</h3>

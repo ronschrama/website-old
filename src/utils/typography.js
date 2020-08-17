@@ -1,6 +1,11 @@
 import Typography from 'typography'
 import fairyGateTheme from 'typography-theme-fairy-gates'
+
 fairyGateTheme.googleFonts = [
+  {
+    name: "Work Sans",
+    styles: ["600"],
+  },
   {
     name: "Inter",
     styles: ["200", "400", "600"],
@@ -23,8 +28,6 @@ fairyGateTheme.overrideThemeStyles = ({ adjustFontSizeTo, scale, rhythm }, optio
     backgroundImage: `none`,
   },
 })
-// To add later:
-// Typography style adjustment for Inter and/or other custom font
 
 const typography = new Typography(fairyGateTheme)
 

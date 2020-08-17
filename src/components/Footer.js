@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Twitter, GitHub, LinkedIn } from './Social'
 
+
 const StyledFooter = styled.footer`
   border-top: 1px solid #13BBAF;
   margin-top: 3rem;
@@ -17,6 +18,7 @@ const StyledBottomBox = styled.div`
     flex-direction: column;
   }
 `
+
 
 export default function Footer() {
   return (

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Footer from './Footer'
 
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,7 +42,6 @@ color: #13BBAF;
   }
 `
 
-
 const ListLink = props => (
   <StyledLi>
     <StyledLink to={props.to}>{props.children}</StyledLink>
@@ -58,6 +58,7 @@ export default function layout({ children }) {
         </Link>
         <StyledUl>
           <ListLink to="/">Home</ListLink>
+          <ListLink to="/blog">Blog</ListLink>
           <ListLink to="/about">About</ListLink>
         </StyledUl>
       </StyledHeader>

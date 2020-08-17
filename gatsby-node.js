@@ -1,45 +1,3 @@
-// const path = require(`path`)
-// const { createFilePath } = require(`gatsby-source-filesystem`)
-
-// exports.onCreateNode = ({ node, getNode, actions }) => {
-//   const { createNodeField } = actions
-//   if (node.internal.type === `Mdx`) {
-//     const slug = createFilePath({ node, getNode, basePath: `blog` })
-//     createNodeField({
-//       node,
-//       name: `slug`,
-//       value: slug,
-//     })
-//   }
-// }
-
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     query {
-//       allMdx {
-//         edges {
-//           node {
-//             fields {
-//               slug
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   result.data.allMdx.edges.forEach(({ node }) => {
-//     createPage({
-//       path: node.fields.slug,
-//       component: path.resolve(`./src/templates/blog-post.js`),
-//       context: {
-//         slug: node.fields.slug,
-//       },
-//     })
-//   })
-// }
-
-
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -56,7 +14,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
+
 const path = require("path")
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions

@@ -57,7 +57,6 @@ export default function layout({ children }) {
           <StyledH3>Ron Schrama</StyledH3>
         </Link>
         <StyledUl>
-          <ListLink to="/">Home</ListLink>
           <ListLink to="/blog">Blog</ListLink>
           <ListLink to="/about">About</ListLink>
         </StyledUl>

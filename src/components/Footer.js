@@ -6,7 +6,6 @@ import { Twitter, GitHub, LinkedIn } from './Social'
 
 const StyledFooter = styled.footer`
   /* border-top: 1px solid #13BBAF; */
-  margin-top: 4rem;
   background-color: #F1F6F9;
 `
 const Container = styled.div`

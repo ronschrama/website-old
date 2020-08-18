@@ -6,7 +6,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   background-color: #F1F6F9;
-  margin-bottom: 4rem;
   height: 320px;
 `
 

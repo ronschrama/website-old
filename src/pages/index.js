@@ -5,13 +5,18 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 
+const Styledh4 = styled.h4`
+  color: #13BBAF;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+`
 
 const DateOfPost = styled.time`
   font-size: 14px;
 `
 
 const Description = styled.p`
-  margin-bottom: 10px;
+  margin-bottom: 2.5rem;
   display: inline-block;
 `
 
@@ -22,7 +27,7 @@ export default function Home({ data }) {
   return (
     <Layout>
       <Hero />
-      <h4>Recent posts</h4>
+      <Styledh4>Recent posts</Styledh4>
       {posts.map(({ node: post }) => (
         <div key={post.id}>
           <DateOfPost>{post.frontmatter.date} </DateOfPost>

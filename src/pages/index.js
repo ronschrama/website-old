@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Container from '../components/Container'
+
 
 const Styledh4 = styled.h4`
   color: #13BBAF;
@@ -27,27 +29,29 @@ export default function Home({ data }) {
   return (
     <Layout>
       <Hero />
-      <Styledh4>Recent posts</Styledh4>
-      {posts.map(({ node: post }) => (
-        <div key={post.id}>
-          <DateOfPost>{post.frontmatter.date} </DateOfPost>
-          <Link to={post.fields.slug}>
-            <h3>{post.frontmatter.title}</h3>
-          </Link>
-          <Description>
-            {post.excerpt}{' '}
-            <Link
-              to={post.fields.slug}
-              aria-label={`View ${post.frontmatter.title}`}
-            >
-              Read Article →
+      <Container>
+        <Styledh4>Recent posts</Styledh4>
+        {posts.map(({ node: post }) => (
+          <div key={post.id}>
+            <DateOfPost>{post.frontmatter.date} </DateOfPost>
+            <Link to={post.fields.slug}>
+              <h3>{post.frontmatter.title}</h3>
+            </Link>
+            <Description>
+              {post.excerpt}{' '}
+              <Link
+                to={post.fields.slug}
+                aria-label={`View ${post.frontmatter.title}`}
+              >
+                Read Article →
               </Link>
-          </Description>
-        </div>
-      ))}
-      <Link to="/blog" aria-label="Visit blog page">
-        View all articles
+            </Description>
+          </div>
+        ))}
+        <Link to="/blog" aria-label="Visit blog page">
+          View all articles
         </Link>
+      </Container>
     </Layout>
   )
 }

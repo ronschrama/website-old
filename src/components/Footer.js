@@ -5,8 +5,15 @@ import { Twitter, GitHub, LinkedIn } from './Social'
 
 
 const StyledFooter = styled.footer`
-  border-top: 1px solid #13BBAF;
-  margin-top: 3rem;
+  /* border-top: 1px solid #13BBAF; */
+  margin-top: 4rem;
+  background-color: #F1F6F9;
+`
+const Container = styled.div`
+  max-width: 680px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 `
 
 const StyledBottomBox = styled.div`
@@ -23,18 +30,20 @@ const StyledBottomBox = styled.div`
 export default function Footer() {
   return (
     <StyledFooter>
-      <div>
-        <h2>Contact</h2>
-        <p>Mail me at: hello@ronschrama.com <br /> Or you can find me here:</p>
-      </div>
-      <StyledBottomBox>
-        <div style={{ marginBottom: '16px' }}>
-          <Twitter />
-          <GitHub />
-          <LinkedIn />
+      <Container>
+        <div>
+          <h2>Contact</h2>
+          <p>Mail me at: hello@ronschrama.com <br /> Or you can find me here:</p>
         </div>
-        <p>ronschrama.com - copyright 2020</p>
-      </StyledBottomBox>
+        <StyledBottomBox>
+          <div style={{ marginBottom: '16px' }}>
+            <Twitter />
+            <GitHub />
+            <LinkedIn />
+          </div>
+          <p>ronschrama.com - copyright 2020</p>
+        </StyledBottomBox>
+      </Container>
     </StyledFooter>
   )
 }
